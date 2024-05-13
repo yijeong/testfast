@@ -8,7 +8,7 @@ image:
   repository: 684231376422.dkr.ecr.ap-northeast-2.amazonaws.com/nessa-test
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.ss
-  tag: "latest"
+  tag: "v2"
 
 imagePullSecrets: []
 nameOverride: ""
