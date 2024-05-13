@@ -14,7 +14,7 @@ metadata:
     alb.ingress.kubernetes.io/group.name: {{ .Values.ingressGroupName }}
     alb.ingress.kubernetes.io/listen-ports: {{ .Values.listenPorts }}
     alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/scheme: internet
+    alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/healthcheck-path: {{ .Values.albHealthCheck }}
     alb.ingress.kubernetes.io/subnets: {{ .Values.albSubnet }}
 spec:

@@ -61,9 +61,10 @@ service:
 
 
 # Ingress
-ingressLbName: fasttest
+ingressLbName: test
 ingressGroupName: test
 listenPorts: "'[{\"HTTP\": 8080}]'"
+albHealthCheck: /
 ingress:
   enabled: true
   annotations:
