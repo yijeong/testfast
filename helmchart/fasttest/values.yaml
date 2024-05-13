@@ -68,10 +68,6 @@ albHealthCheck: /
 ingress:
   enabled: true
   annotations:
-    alb.ingress.kubernetes.io/actions.service: >
-      {"type":"forward","forwardConfig":{"targetGroups":[{"serviceName":"fasttest","servicePort":8080,"weight":100}]}}
-    alb.ingress.kubernetes.io/conditions.service: >
-      [{"field":"host-header","hostHeaderConfig":{"values":["*"]}}]
 ingressRule:
   - http:
       paths:
@@ -79,9 +75,9 @@ ingressRule:
           pathType: Prefix
           backend:
             service:
-              name: service
+              name: fasttest
               port:
-                name: use-annotation
+                number: 8080
 ingressName: internal-alb-ingress-init-ingress
 albSubnet: subnet-04b5223096ec8ac2f, subnet-0aa931b789aaa2b5e
 
