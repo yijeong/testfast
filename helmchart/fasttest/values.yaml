@@ -65,6 +65,7 @@ ingressLbName: fasttest
 ingressGroupName: test
 listenPorts: "'[{\"HTTP\": 8080}]'"
 ingress:
+  enabled: true
   annotations:
     alb.ingress.kubernetes.io/actions.service: >
       {"type":"forward","forwardConfig":{"targetGroups":[{"serviceName":"fasttest","servicePort":8080,"weight":100}]}}
