@@ -20,7 +20,7 @@ spec:
         pongService: {{ .Values.applicationName }}-stable
       trafficRouting:
         alb:
-          ingress: test
+          ingress: fasttest-rollout
           servicePort: {{ .Values.service.port }}
           rootService: {{ .Values.applicationName }}
   {{- if not .Values.autoscaling.enabled }}
