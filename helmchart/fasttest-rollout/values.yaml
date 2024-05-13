@@ -77,7 +77,7 @@ ingressRule:
             service:
               name: fasttest-rollout
               port:
-                number: use-annotation
+                name: use-annotation
 ingressName: fasttest-rollout
 albSubnet: subnet-04b5223096ec8ac2f, subnet-0aa931b789aaa2b5e
 
