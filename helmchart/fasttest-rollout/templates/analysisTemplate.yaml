@@ -16,7 +16,7 @@ spec:
     failureLimit: 3
     provider:
       prometheus:
-        address: http://prometheus-server.monitoring.svc.cluster.local:9090
+        address: http://prometheus-server.monitoring.svc.cluster.local:80
         timeout: 40
         headers:
         - key: X-Scope-Org-ID
