@@ -6,7 +6,7 @@ image:
   repository: 684231376422.dkr.ecr.ap-northeast-2.amazonaws.com/nessa-test
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.ss
-  tag: "v2"
+  tag: "v3"
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
@@ -87,9 +87,9 @@ canary:
   maxSurge: "25%"
   maxUnavailable: 0
   steps:
-    - setWeight: 5
+    - setWeight: 20
     - pause: {}
-    - setWeight: 10
+    - setWeight: 50
     - pause: {}
 
 
