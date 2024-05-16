@@ -12,20 +12,15 @@ spec:
     interval: 1m
     # NOTE: prometheus queries return results in the form of a vector.
     # So it is common to access the index 0 of the returned array to obtain the value
-    successCondition: result[0] >= 0.95
+    successCondition: result[0] >= 0.1
     failureLimit: 3
     provider:
       prometheus:
-        address: http://prometheus.example.com:9090
+        address: http://prometheus-server.monitoring.svc.cluster.local:9090
         # timeout is expressed in seconds
         timeout: 40
         headers:
         - name: X-Scope-Org-ID
           value: tenant_a
         query: |
-          sum(irate(
-            istio_requests_total{reporter="source",destination_service=~"{{args.service-name}}",response_code!~"5.*"}[5m]
-          )) /
-          sum(irate(
-          istio_requests_total{reporter="source",destination_service=~"{{args.service-name}}"}[5m]
-          ))
+          container_memory_usage_bytes{container="fasttest-rollout"}/container_spec_memory_limit_bytes{container="fasttest-rollout"}
