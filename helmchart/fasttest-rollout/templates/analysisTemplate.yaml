@@ -17,10 +17,9 @@ spec:
     provider:
       prometheus:
         address: http://prometheus-server.monitoring.svc.cluster.local:9090
-        # timeout is expressed in seconds
         timeout: 40
         headers:
-        - name: X-Scope-Org-ID
+        - key: X-Scope-Org-ID
           value: tenant_a
         query: |
           container_memory_usage_bytes{container="fasttest-rollout"}/container_spec_memory_limit_bytes{container="fasttest-rollout"}
